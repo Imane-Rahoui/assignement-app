@@ -12,3 +12,9 @@ td{
 #n{
   padding: 0px;
 }
+.rendu{
+  color:blue
+}
+.nonrendu{
+  color:orange
+}

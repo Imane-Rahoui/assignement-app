@@ -10,10 +10,42 @@
 <h1>NON RENDU UNIQUEMENT</h1>
 
 <div *ngFor="let a of assignments ">
-  <p *ngIf="a.rendu; else nonsoumis">
+  <p style="color:green" *ngIf="a.rendu; else nonsoumis">
     {{a.nom}} a été rendu le {{a.DateDeRendu}}
   </p>
   <ng-template #nonsoumis id="n">
-    Le devoir {{a.nom}} n'a pas été rendu.
+    <p style="color:red">Le devoir {{a.nom}} n'a pas été rendu.</p>
+  </ng-template>
+</div>
+<button mat-button color="warn">Click</button>
+<!-- si tu mets disabled chaque chaine differente de true c est false -->
+<!-- si [disabled] il verifie apres le = c'est une variable -->
+
+<hr>
+
+<div *ngFor="let a of assignments " [ngStyle]="{'color':getColor(a)}">
+  <!-- ngstyle permet de faire appel de methode ldakhl  ou variables : [ngStyle]="{'color':couleur}" -->
+  <p>
+    {{a.nom}} a été rendu le {{a.DateDeRendu}}
+  </p>
+
+</div>
+
+<hr>
+
+<div *ngFor="let a of assignments " [ngClass]="{'rendu':a.rendu,'nonrendu':!a.rendu}">
+  <p>
+    {{a.nom}} a été rendu le {{a.DateDeRendu}}
+  </p>
+
+</div>
+
+<hr>
+<div *ngFor="let a of assignments ">
+  <p appRendu *ngIf="a.rendu; else nonsoumis">
+    {{a.nom}} a été rendu le {{a.DateDeRendu}}
+  </p>
+  <ng-template #nonsoumis id="n">
+    <p>Le devoir {{a.nom}} n'a pas été rendu.</p>
   </ng-template>
 </div>

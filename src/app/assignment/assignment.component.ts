@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AssignmentComponent {
   nom = "Imana Raoui"
+  couleur = "orange"
   assignments = [
     {
       nom: "TP R de mr PASQUIER !",
@@ -24,4 +25,11 @@ export class AssignmentComponent {
       rendu: false
     }
   ]
+
+  getColor(a: any) {
+    if (a.rendu)
+      return "green";
+    else
+      return "red"
+  }
 }
