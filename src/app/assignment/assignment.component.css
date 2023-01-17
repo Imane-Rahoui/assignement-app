@@ -1,0 +1,14 @@
+
+table,tr,td{
+  border:1px solid black;
+  border-collapse: collapse;
+}
+h1{
+  color: violet;
+}
+td{
+  padding:10px
+}
+#n{
+  padding: 0px;
+}

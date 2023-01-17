@@ -1,0 +1,19 @@
+<p>FILS DU COMPOSANTS PRINCIPAL - assignment works!</p>
+{{nom}}
+<table>
+  <tr *ngFor="let a of assignments ">
+    <td>{{a.nom}}</td>
+    <td>{{a.DateDeRendu}}</td>
+    <td> {{a.rendu}}</td>
+  </tr>
+</table>
+<h1>NON RENDU UNIQUEMENT</h1>
+
+<div *ngFor="let a of assignments ">
+  <p *ngIf="a.rendu; else nonsoumis">
+    {{a.nom}} a été rendu le {{a.DateDeRendu}}
+  </p>
+  <ng-template #nonsoumis id="n">
+    Le devoir {{a.nom}} n'a pas été rendu.
+  </ng-template>
+</div>
