@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class AssignmentComponent {
   nom = "Imana Raoui"
   couleur = "orange"
+  ajoutDesactive = true;
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.ajoutDesactive = false;
+    }, 200
+    )
+  }
   assignments = [
     {
       nom: "TP R de mr PASQUIER !",
@@ -32,4 +39,9 @@ export class AssignmentComponent {
     else
       return "red"
   }
+  onSubbb(event: any) {
+    // les even js s appellent les even du dom
+    console.log(event)
+  }
+
 }

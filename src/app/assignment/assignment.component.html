@@ -49,3 +49,13 @@
     <p>Le devoir {{a.nom}} n'a pas été rendu.</p>
   </ng-template>
 </div>
+
+<hr>
+
+<form ngForm #assignmentForm (submit)="onSubbb($event)">
+  <button mat-stroked-button color="primary" [disabled]="ajoutDesactive">
+    Ajouter un devoir
+  </button>
+</form>
+<div *ngFor="let assignment of assignments">
+</div>
